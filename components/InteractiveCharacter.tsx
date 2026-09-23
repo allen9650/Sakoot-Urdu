@@ -210,7 +210,7 @@ export default function InteractiveCharacter() {
           {/* 4. Enhanced Eye Pupils Tracking Layer (Exact Hazel Iris Sprite from Artwork) */}
           {/* Left Eye (Viewer's Left: ~50.58% X, ~34.27% Y) */}
           <div
-            className="absolute pointer-events-none select-none"
+            className="absolute pointer-events-none select-none rounded-full overflow-hidden"
             style={{
               left: "50.58%",
               top: "34.27%",
@@ -218,6 +218,9 @@ export default function InteractiveCharacter() {
               height: "4.0%",
               minWidth: "22px",
               minHeight: "22px",
+              borderRadius: "50%",
+              clipPath: "circle(50% at 50% 50%)",
+              boxShadow: "0 1px 3px rgba(0, 0, 0, 0.75)",
               transform: `translate(calc(-50% + ${pupilOffsetX}px), calc(-50% + ${pupilOffsetY}px))`,
               transition: "transform 0.08s cubic-bezier(0.2, 0.8, 0.4, 1)"
             }}
@@ -227,13 +230,13 @@ export default function InteractiveCharacter() {
               alt="Shaggy left eye iris"
               width={32}
               height={32}
-              className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] drop-shadow-[0_0_2px_rgba(80,40,15,0.6)]"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
 
           {/* Right Eye (Viewer's Right: ~59.52% X, ~34.15% Y) */}
           <div
-            className="absolute pointer-events-none select-none"
+            className="absolute pointer-events-none select-none rounded-full overflow-hidden"
             style={{
               left: "59.52%",
               top: "34.15%",
@@ -241,6 +244,9 @@ export default function InteractiveCharacter() {
               height: "4.0%",
               minWidth: "22px",
               minHeight: "22px",
+              borderRadius: "50%",
+              clipPath: "circle(50% at 50% 50%)",
+              boxShadow: "0 1px 3px rgba(0, 0, 0, 0.75)",
               transform: `translate(calc(-50% + ${pupilOffsetX}px), calc(-50% + ${pupilOffsetY}px))`,
               transition: "transform 0.08s cubic-bezier(0.2, 0.8, 0.4, 1)"
             }}
@@ -250,7 +256,7 @@ export default function InteractiveCharacter() {
               alt="Shaggy right eye iris"
               width={32}
               height={32}
-              className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] drop-shadow-[0_0_2px_rgba(80,40,15,0.6)]"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
 

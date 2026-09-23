@@ -4,6 +4,25 @@ import React, { useState, useEffect } from "react";
 import SoundManager from "./SoundManager";
 import { Menu, X } from "lucide-react";
 
+function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
 const NAV_LINKS = [
   { name: "Home", href: "#hero", urdu: "آغاز" },
   { name: "Poetry", href: "#poetry", urdu: "شاعری" },
@@ -87,9 +106,21 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Ambient Sound & Mobile Toggle */}
-        <div className="flex items-center gap-4">
+        {/* Ambient Sound, Instagram & Mobile Toggle */}
+        <div className="flex items-center gap-3">
           <SoundManager />
+
+          {/* Instagram Link */}
+          <a
+            href="https://www.instagram.com/shaggy965_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 bg-white/[0.03] text-zinc-400 hover:text-amber-200 hover:border-amber-400/40 transition-all duration-300"
+            aria-label="Instagram profile @shaggy965_"
+            title="@shaggy965_ on Instagram"
+          >
+            <InstagramIcon className="w-3.5 h-3.5" />
+          </a>
 
           {/* Mobile hamburger */}
           <button
@@ -117,6 +148,20 @@ export default function Navbar() {
                 <span className="font-urdu text-sm text-zinc-500">{link.urdu}</span>
               </a>
             ))}
+            {/* Instagram Profile */}
+            <a
+              href="https://www.instagram.com/shaggy965_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-between py-2.5 text-sm tracking-widest text-amber-200 hover:text-white border-b border-white/5"
+            >
+              <span className="flex items-center gap-2">
+                <InstagramIcon className="w-4 h-4 text-amber-400" />
+                <span>Instagram</span>
+              </span>
+              <span className="text-xs text-zinc-400 font-mono">@shaggy965_</span>
+            </a>
           </nav>
         </div>
       )}
